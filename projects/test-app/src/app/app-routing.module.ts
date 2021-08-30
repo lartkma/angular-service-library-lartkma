@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TestLibraryModule } from 'test-library';
 import { AppPageComponent } from './apppage/apppage.component';
 
 const routes: Routes = [
@@ -10,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'from-lib',
-    loadChildren: () => TestLibraryModule
+    loadChildren: () => import('test-library').then(m => m.TestLibraryModule)
   }
 ];
 
