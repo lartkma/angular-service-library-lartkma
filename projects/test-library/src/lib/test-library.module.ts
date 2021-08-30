@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
-import { TestLibraryComponent } from './test-library.component';
-
-
+import { TestLibraryRoutingModule } from './test-library-routing.module';
 
 @NgModule({
   declarations: [
-    TestLibraryComponent
   ],
   imports: [
+    TestLibraryRoutingModule
   ],
   exports: [
-    TestLibraryComponent
   ]
 })
 export class TestLibraryModule { }
