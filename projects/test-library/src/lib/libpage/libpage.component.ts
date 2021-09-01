@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ExternalService } from '../external.service';
 
 @Component({
   selector: 'lib-libpage',
@@ -9,10 +9,10 @@ import { HttpClient } from '@angular/common/http';
 export class LibPageComponent implements OnInit {
   loadedStatus = 'no';
 
-  constructor(private http : HttpClient) { }
+  constructor(private external : ExternalService) { }
 
   ngOnInit(): void {
-    this.http.get('https://jsonplaceholder.typicode.com/todos/1').subscribe(data => {
+    this.external.callService().subscribe(data => {
       this.loadedStatus = 'yes'
     })
   }
